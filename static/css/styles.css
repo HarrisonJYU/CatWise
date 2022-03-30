@@ -61,7 +61,7 @@ footer a {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: #FFB085;
+  background: #F3C5C5;
 }
 
 .hero-body {
@@ -72,7 +72,7 @@ footer a {
 .cta {
   height: 500px;
   border-top: 10px solid #FEF1E6;
-  background: #FFB085;
+  background: #F3C5C5;
 }
 
 hr.content-divider {
@@ -80,57 +80,68 @@ hr.content-divider {
   height: 5px;
 }
 
+.button1 {
+  background-color: #C1A3A3; 
+  border: white;
+  color: white;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  margin-top: 20px;
+}
 
 #parallax-1 {
-  background: url(https://cdn.shopify.com/s/files/1/0284/2391/3547/articles/photo-1539692177343-b2b990faef15_1512x.jpg?v=1598563155);
+  background: url(https://www.gannett-cdn.com/-mm-/d3bc9872e03d6cba8eb92ac20551a49184451390/c=0-649-4786-3353/local/-/media/2018/07/25/USATODAY/USATODAY/636681385356586403-CAT-PHOTO.jpg?width=1320&height=746&fit=crop&format=pjpg&auto=webp);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 10px solid #FEF1E6;
+  border-top: 10px solid #C1A3A3;
 }
 
 #parallax-1 hr {
-  background: #FEF1E6;
+  background: #C1A3A3;
 }
 
 #parallax-2 {
-  background: url(https://cdn.shopify.com/s/files/1/0284/2391/3547/files/photo-1548199973-03cce0bbc87b_grande.jpg?v=1598562872);
+  background: url(/static/css/WechatIMG8078.jpeg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 10px solid #FFB085;
+  border-top: 10px solid #694E4E;
 }
 
 #parallax-2 hr {
-  background: #FFB085;
+  background: #694E4E;
 }
 
 #parallax-3 {
-  background: url(https://cdn.shopify.com/s/files/1/0284/2391/3547/files/fetch-4957501_1920_e8c811c7-fe1e-4ca0-9a4f-31623d116d5e_600x600.jpg?v=1624489008);
+  background: url(/static/css/WechatIMG10799.jpeg);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 10px solid #FEF1E6;
+  border-top: 10px solid #886F6F;
 }
 
 #parallax-3 hr {
-  background: #FEF1E6;
+  background: #886F6F;
 }
 
 #parallax-4 {
-  background: url(https://cdn.shopify.com/s/files/1/0284/2391/3547/files/dog-4415649_1920_9bbe3115-9cf6-4b2a-a851-2ff7db0ef422_600x600.jpg?v=1624487651);
+  background: url(https://townsquare.media/site/712/files/2016/04/Woman-With-Cat.jpg?w=630&h=418&q=75);
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-  border-top: 10px solid #90AACB;
+  border-top: 10px solid #C1A3A3;
 }
 
 #parallax-4 hr {
-  background: #90AACB;
+  background: #C1A3A3;
 }
 
 .label {
