@@ -1,4 +1,4 @@
-# Milestone 1 Project: Ruffhouse
+# Milestone 2 Project: CatWise
 
 Refer to the assignment for most of the details of the project
 
@@ -16,4 +16,3 @@ This project is __almost__ functional but missing some key elements, and some of
 
 ## Updates
 
-There are likely some other bugs that I don't intend to be here, so there may be updates after
