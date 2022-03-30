@@ -15,7 +15,7 @@ A web app that displays adoptable cats in NYC shelters and allows users to make 
 
 ## Development 
 **TODO:**
-* improving `sign-in` page 
+* improving sign-in page 
 
 ## Updates
 1. Firebase hosting: URL's forbidden issue.
