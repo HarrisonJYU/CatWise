@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Catwise Pet Adoption Form</title>
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+  <link rel="stylesheet" href="/static/style1.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1 class="brand"><span>Catwise</span> Cat Adoption Form</h1>
+    <div class="wrapper">
+      <div class="company-info">
+        <h3>Cat Adoption Form</h3>
+        <ul>
+          <li><i class="fa fa-road"></i> 1 E Loop Rd</li>
+          <li><i class="fa fa-phone"></i> (111) 222-4567</li>
+          <li><i class="fa fa-envelope"></i> catwise.org</li>
+        </ul>
+      </div>
+      <div class="contact">
+        <h3>Your Application </h3>
+        <h4>Simply fill out this form and we will get back to you ASAP.</h4>
+        <div class="alert">Your message has been sent</div>
+        <form id="contactForm">
+          <p>
+            <label>Name</label>
+            <input type="text" name="name" id="name" required>
+          </p>
+          <p>
+            <label>Occupation</label>
+            <input type="text" name="company" id="company">
+          </p>
+          <p>
+            <label>Email Address</label>
+            <input type="text" name="email" id="email" required>
+          </p>
+          <p>
+            <label>Phone Number</label>
+            <input type="text" name="phone" id="phone">
+          </p>
+          <p class="full">
+            <label>Please answer the following questions using the text area below: (1) Are you financially sound to support your pet? (2) Are you adopting a cat for yourself? (3) Do you have time to play with your kitten/cat on a daily basis? (4) Did you get consent from your family members/roommates for having a pet? (5) Do you have other pets at home? If so, what kind/breed/sex/age? (6) How much do you plan to spend on your kitten(s) monthly per cat ?</label>
+            <textarea name="message" rows="9" id="message"></textarea>
+          </p>
+          
+          <p class="full">
+            <button type="submit">Submit</button>
+          </p>
+
+          <p class="full">
+            <button style="color: black"><a href="dashboard">Return</a></button>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  <script src="adoption.js"></script>
+</body>
+</html>
