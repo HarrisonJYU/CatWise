@@ -3,7 +3,6 @@
 
 <head>
   <%- include('../partials/head') %>
-
 </head>
 
 <body>
@@ -12,26 +11,21 @@
   </header>
 
   <style>
-    .column {
-  float: left;
-  width: 33.33%;
-  padding: 5px;
+  .column {
+    float: left;
+    width: 50%;
+    padding: 5px;
+  }
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
 
-  
-}
-
-/* Clear floats after image containers */
-
-.row::after {
-  content: "";
-  clear: both;
-  display: table;
-
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
-  margin: auto;
-  text-align: center;
-}
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: auto;
+    text-align: center;
+  }
 
 img {
     float: left;
@@ -43,82 +37,126 @@ img {
 {
     display: inline-block;
 }
+.box{
+  display:none;
+}
+.show{
+  display:block;
+}
+.btn{
+  background-color: #F3C5C5;
 
+  height: 50px;
+  color: white;
+  padding: 15px;
+  margin: 10px 0px;
+  border: none;
+  cursor: pointer; 
+}
   </style>
 
 
   <div class="container1" style="margin-top: 40px;">
     <div class="columns">
-      <div class="column is-3 " style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: right;">
+      <div class="column is-3" style="font-family: Verdana, Geneva, Tahoma, sans-serif; text-align: right;">
         <aside class="menu">
           <p class="menu-label" style="margin-top: 4px;">
-            Find Pets to Adopt Near You
+            CatWise
           </p>
           <ul class="menu-list">
-            <li><a>ZIP Code or City</a></li>
-
+            <li><a>Filter by Personality</a></li>
+          
           </ul>
         </aside>
       </div>
 
+      
+      
+
       <div class="column is-4">
         <div class="mb-6">
           <div class="has-text-weight-bold mb-2">
-            Matching Cat List
+            List of Cats You May Like
           </div>
-          <form action="/dog-messages" method="post">
-            <input class="input" type="text" name="message" placeholder="New York" />
-            <button class="button mt-2">Find More</button>
-          </form>
+          
+          <div id = "buttons">
+            <button class = "btn" onclick="filterObjects('all')">Show All</button>
+            <button class = "btn" onclick="filterObjects('playful')">Playful</button>
+            <button class = "btn" onclick="filterObjects('quiet')">Quiet</button>
+            <button class = "btn" onclick="filterObjects('easy-going')">Easy-going</button>
+            <button class = "btn" onclick="filterObjects('active')">Active</button>
+            <button class = "btn" onclick="filterObjects('docile')">Docile</button>
+          </div>
+            
+           <button class="button mt-2"><a href="/wishlist">My Wishlist</a></button>
+   
 
 
+           <button class = "inner"  border: none;color: white;"><a href="/test">test</a></button>
 
           <div class="row">
+
+            
             <div class="column">
+              <div class ="box playful" >
               <img src="https://ny-petrescue.org/files/_cache/f9b137fbc915b64e791757f4fe2b644b.jpg" alt="Snow" style="width:100%">
-              
               <p class="title">Coco</p>
               <p>Kitten: 1 Year, Female, Domestic Short Hair</p>
               <h1>10 Miles Away</h1>
-              <button class = "inner" style="background-color:#C1A3A3 ; border: none;color: white;">details</button>
+              <button class = "inner" style="background-color:#F3C5C5; border: none;color: white;"><a href="/apply">Adopt Me</a></button>
+             
             </div>
+          </div>
+
             <div class="column">
+              <div class ="box quiet" >
               <img src="https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/54711284/1/?bust=1647983728&width=1080" alt="Forest" style="width:100%">
               <p class="title">Joy</p>
               <p>Adult: 7-10 Years, Male, Domestic Short Hair</p>
               <h1>11 Miles Away</h1>
-              <button class = "inner" style="background-color:#C1A3A3 ; border: none;color: white;">details</button>
+              <button class = "inner" style="background-color:#F3C5C5; border: none;color: white;"><a href="/apply">Adopt Me</a></button>
+              </div>
             </div>
+
             <div class="column">
+              <div class ="box easy-going" >
               <img src="https://cdn.adopets.com/organization/pet/picture/2022226_17441_1648314281539.jpeg?width=600" alt="Mountains" style="width:100%">
               <p class="title">Max</p>
               <p>Young: 6 Years, Female, Domestic Short Hair</p>
               <h1>8 Miles Away</h1>
-              <button class = "inner" style="background-color:#C1A3A3 ; border: none;color: white;">details</button>
-            </div>
+              <button class = "inner" style="background-color:#F3C5C5; border: none;color: white;"><a href="/apply">Adopt Me</a></button>
+              </div>
           </div>
 
           <div class="row">
             <div class="column">
+              <div class ="box active" >
               <img src="https://prd-use1-shelter-app.s3.amazonaws.com/pets/03-28-2022/ixktdbdlbqajwoiamumaaiafwwwfah.jpg" alt="Snow" style="width:100%">
               <p class="title">Pumpkin</p>
               <p>Young: 1-6 Years, Male, Tabby</p>
               <h1>10 Miles Away</h1>
-              <button style="background-color:#C1A3A3 ; border: none;color: white;">details</button>
+              <button style="background-color:#F3C5C5; border: none;color: white;" ><a href="/apply">Adopt Me</a></button>
+              </div>>
             </div>
+
             <div class="column">
+              <div class ="box docile" >
               <img src="https://prd-use2-shelter-app.s3.amazonaws.com/pets/03-13-2022/vmxwvqmuunfnqrtvoozkirmbxnsojf.jpg" alt="Forest" style="width:100%">
               <p class="title">Lillie</p>
               <p>Adult: 7-10 Years, Male, Domestic Short Hair</p>
               <h1>10 Miles Away</h1>
-              <button style="background-color:#C1A3A3 ; border: none;color: white;">details</button>
+              <button style="background-color:#F3C5C5; border: none;color: white;"><a href="/apply">Adopt Me</a></button>
+              </div>
             </div>
+
             <div class="column">
+              <div class ="box playful" >
               <img src="https://cdn.adopets.com/organization/pet/picture/20220308_205243_16467727639725.jpeg?width=600" alt="Mountains" style="width:100%">
               <p class="title">Mr. Waffles</p>
               <p>Young: 5 Years, Female, Domestic Short Hair</p>
               <h1>18 Miles Away</h1>
-              <button style="background-color:#C1A3A3 ; border: none;color: white;">details</button>
+              <button style="background-color:#F3C5C5; border: none;color: white;"><a href="/apply">Adopt Me</a></button>
+              </div>
             </div>
           </div>
 
@@ -132,6 +170,44 @@ img {
     </div>
   </div>
 
+<script>
+
+filterObjects("all");
+  
+  function filterObjects(c){
+      var x, i;
+      x = document.getElementsByClassName("box");
+      if (c == "all") c = ""
+      for (i = 0; i < x.length; i++) {
+          removeClass(x[i], "show");
+          if(x[i].className.indexOf(c) > -1) addClass(x[i], "show")
+      }
+  }
+  
+  function addClass(element, name){
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++){
+          if (arr1.indexOf(arr2[i]) == -1){
+              element.className += " " + arr2[i];
+          }
+      }
+  }
+  
+  function removeClass(element, name){
+      var i, arr1, arr2;
+      arr1 = element.className.split(" ");
+      arr2 = name.split(" ");
+      for (i = 0; i < arr2.length; i++){
+          while (arr1.indexOf(arr2[i]) > -1){
+              arr1.splice(arr1.indexOf(arr2[i]), 1);
+          }
+      }
+      element.className = arr1.join(" ");
+  }
+
+</script>
 </body>
 
 <%- include('../partials/footer') %>

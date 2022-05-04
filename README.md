@@ -1,22 +1,19 @@
-# Milestone 2 Project: CatWise
+# Milestone 1 Project: Ruffhouse
 
-## About 
-**Project Description:** <br>
-A web app that displays adoptable cats in NYC shelters and allows users to make adoption decisions based on their preference of the cat's personality.
-
-* Product Overview: <a href='https://docs.google.com/document/d/1u9-42_wN5z_heDCvzQTpA4aZNTGQhJ26E748gFJufLQ/edit'>Link</a>
-* CatWise Website: https://catwise-6bbf2.web.app
-
+Refer to the assignment for most of the details of the project
 
 ## Usage
+
 * Run  `npm install` to install all the project dependencies
 * Run `npm run start` to start the server
 * Visit http://localhost:8080 in your browser to see the web application
 
-## Development 
-**TODO:**
-* improving sign-in page 
+## Development
+
+There are TODOs scattered throughout the codebase. You can search for `CS5356 TODO` to see the items that need to be completed.
+
+This project is __almost__ functional but missing some key elements, and some of the features won't work.
 
 ## Updates
-1. Firebase hosting: URL's forbidden issue.
-2. Sign-in page: Cannot direct to Dashboard page after signing in.
+
+There are likely some other bugs that I don't intend to be here, so there may be updates after

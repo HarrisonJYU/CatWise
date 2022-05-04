@@ -20,6 +20,7 @@
 // const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 
+
 const functions = require("firebase-functions") 
 const express = require("express");
 const path = require("path");
@@ -70,6 +71,18 @@ app.get("/sign-up", function(req, res) {
   res.render("pages/sign-up");
 });
 
+app.get("/apply", function(req, res) {
+  res.render("pages/apply");
+});
+
+app.get("/wishlist", function(req, res) {
+  res.render("pages/wishlist");
+});
+
+app.get("/test", function(req, res) {
+  res.render("pages/test");
+});
+
 app.get("/dashboard", authMiddleware, async function(req, res) {
   const feed = await userFeed.get();
   res.render("pages/dashboard", {
@@ -98,7 +111,7 @@ app.post("/sessionLogin", async (req, res) => {
           httpOnly: true,
           secure: true
         };
-        res.cookie('session', sessionCookie, options);
+        res.cookie('__session', sessionCookie, options);
         res.status(200).send(JSON.stringify({
           status: 'success'
         }));
@@ -131,6 +144,8 @@ app.post("/dog-messages", authMiddleware, async (req, res) => {
   });
 });
 
+
+
 exports.app = functions.https.onRequest(app); 
-//app.listen(port);
-//console.log("Server started at http://localhost:" + port);
+app.listen(port);
+console.log("Server started at http://localhost:" + port);

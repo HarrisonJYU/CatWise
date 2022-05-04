@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Wishlist</title>
+</head>
+<body
+
+    <div class="container">
+            <div class="row">
+                    <h2>Add Cats in Your Wishlist</h2>
+            </div>
+        <div class="row" id="row1">
+           
+
+    </div>
+        <div class="row">
+                <h3>Your Cat Wishlist</h3>
+        </div>
+        <div class="row" id="row2">
+                <table class="table">
+                        <thead class="thead-pink">
+                          <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Remove</th>
+                            <th scope="col">Image</th>
+                            <th scope="col">Name</th> 
+                            <th scope="col">Submit Application</th>
+                          </tr>
+                        </thead>
+                        <tbody id="tableProducts">
+                          
+                         
+                        </tbody>
+                        <tfoot id="total"></tfoot>
+
+                        </tfoot>
+                      </table>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/6.2.2/firebase.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@8.13.0/dist/sweetalert2.all.min.js"></script>
+
+
+
+<script>
+const firebaseConfig = {
+  apiKey: "AIzaSyAxWg1IFP2uS5KPHyM7fxb179Mltni4Sgg",
+  authDomain: "catwise-6bbf2.firebaseapp.com",
+  databaseURL: "https://catwise-6bbf2-default-rtdb.firebaseio.com",
+  projectId: "catwise-6bbf2",
+  storageBucket: "catwise-6bbf2.appspot.com",
+  messagingSenderId: "861554494369",
+  appId: "1:861554494369:web:c9126aeaa42cd099df59e0",
+  measurementId: "G-TX81YZKCFB"
+};
+
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  function buy() {
+      var productsFirebase=[];
+      for (let index = 0; index < products.length; index++) {
+         if (products[index].cart) {
+            var product={
+                name: products[index].name,
+                price: products[index].price,
+                
+                
+            }
+            productsFirebase.push(product);
+         }
+          
+      }
+    firebase.database().ref('cart').push({
+        total:total(),
+        products: productsFirebase
+    });
+    Swal.fire({
+        type: 'success',
+        title: 'Success',
+        text: 'Operation Completed!',
+       
+      })
+    clean();
+
+}
+
+var products = [
+    {
+        id:1,
+        img:"https://ny-petrescue.org/files/_cache/f9b137fbc915b64e791757f4fe2b644b.jpg",
+        name:'Coco',
+        discription: "Kitten: 1 Year, Female, Domestic Short Hair",
+        price:150,
+        cart:false,
+        
+        total:0
+        
+       
+    },
+    {
+        id:2,
+        img:'https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/54711284/1/?bust=1647983728&width=1080',
+        name:'Pumpkin',
+        discription: "Adult: 7-10 Years, Male, Domestic Short Hair",
+        price:150,
+        cart:false,
+        
+        total:0
+    },
+    {
+        id:3,
+        img:'https://prd-use1-shelter-app.s3.amazonaws.com/pets/03-28-2022/ixktdbdlbqajwoiamumaaiafwwwfah.jpg',
+        name:'Joy',
+        discription:'Young: 1-6 Years, Male, Tabby',
+        price:150,
+        cart:false,
+        quantity:1,
+        total:0
+      
+    },
+    {
+        id:4,
+        img:"https://dl5zpyw5k3jeb.cloudfront.net/photos/pets/55102250/1/?bust=1651519754&width=1080",
+        name:'Max',
+        discription: "Kitten: 1 Year, Female, Domestic Short Hair",
+        price:150,
+        cart:false,
+        
+        total:0
+        
+       
+    },
+    {
+        id:5,
+        img:'https://cdn.adopets.com/organization/pet/picture/20220308_205243_16467727639725.jpeg?width=600',
+        name:'Lillie',
+        discription: "Adult: 7-10 Years, Male, Domestic Short Hair",
+        price:200,
+        cart:false,
+        
+        total:0
+    },
+    {
+        id:6,
+        img:'https://cdn.adopets.com/organization/pet/picture/2022226_17441_1648314281539.jpeg?width=600',
+        name:'Mr. Waffles',
+        discription:'Young: 5 Years, Female, Domestic Short Hair',
+        price:100,
+        cart:false,
+        
+        total:0
+      
+    }
+    
+];
+function total() {
+    let total=0;
+    for (let index = 0; index < products.length; index++) {
+       if (products[index].cart) {
+        total+=products[index].total;
+       } 
+        
+    }
+    return total
+}
+var con=0;
+var con2=[]; //POSITION AT TABLE
+function clean() {
+    for (let index = 0; index < products.length; index++) {
+           products[index].total=0;
+           products[index].quantity=1;
+           products[index].cart=false;
+           con2=[];
+           updateCart();
+     }
+    
+}
+function add(id) {
+   
+
+   for (let index = 0; index < products.length; index++) {
+    if (products[index].id != id || products[index].cart==true) {
+       
+    } else {
+     products[index].cart=true;
+     con2.push(products[index].id);
+     console.log(con2)
+     document.getElementById('tableProducts').innerHTML+=`
+     <tr>
+    <th scope="row">${con+1}</th>
+    <td><button class="btn btn-danger" onclick="remove(${products[index].id})">X</button></td>
+    <td><img style="width: 15rem;" src="${products[index].img}" ></td>
+    <td>${products[index].name}</td>
+    <td><button style="background-color:#F3C5C5; border: none;color: white;" > <a href="/apply">Adopt Me</a></button>  </td>
+    
+    <td>
+    
+    </td>
+   
+     </tr>
+    `
+        con++;
+       products[index].total=products[index].price*products[index].quantity
+    }
+
+    
+    
+    
+   }
+   
+    
+   
+ 
+ 
+}
+function remove(id) {
+   
+    for (let index = 0; index < products.length; index++) {
+       if (products[index].id == id) {
+            products[index].cart=false;
+            products[index].total=0;
+            products[index].quantity=1;
+            total();
+            for (let index2 = 0; index2 < con2.length; index2++) {
+               if (products[index].id == con2[index2]) {
+                   con2.splice(index2,1);
+                   console.log(con2);
+               } else {
+                   
+               }
+                
+            }
+
+            updateCart();
+       } else {
+        updateCart();
+       }
+        
+    }
+}
+function updateCart(){
+    con= 0;
+    var totalTable=0;
+    document.getElementById('tableProducts').innerHTML='';
+    for (let index = 0; index < con2.length; index++) {
+        var position = con2[index];
+        for (let index3 = 0; index3 < products.length; index3++) {
+            
+           if (position == products[index3].id) {
+            console.log( 'ENCONTRADO: '+position +'  '+products[index3].id);
+            document.getElementById('tableProducts').innerHTML+=`
+            <tr>
+           <th scope="row">${con+1}</th>
+           <td><button class="btn btn-danger" onclick="remove(${products[index3].id})">X</button></td>
+           <td><img style="width: 5rem;" src="${products[index3].img}" ></td>
+           <td>${products[index3].name}</td>
+           
+           <td>
+           
+           </td>
+           
+            </tr>
+            
+           `
+           } 
+            
+        }
+
+       con=con+1;
+     }
+   
+}
+function reduceAmount(id) {
+        for (let index = 0; index < products.length; index++) {
+            if (products[index].id == id) {
+               if ( products[index].quantity > 1) {
+                products[index].quantity=products[index].quantity-1;
+                updateCart();
+               } else {    
+               }
+            } else {
+                
+            }
+            
+        }
+}
+
+
+(()=>{
+    for (let index = 0; index < products.length; index++) {
+        document.getElementById('row1').innerHTML+=`
+        <div class="card m-2" style="width: 17rem;">
+        <img src="${products[index].img}" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">${products[index].name}</h5>
+          <p class="card-text">${products[index].discription}</p>
+          <p class="card-text">Adoption Fee:</p>
+          <p class="card-text">$ ${products[index].price}.00</p>
+          <button style="background-color:#F3C5C5; border: none;color: white;" class="btn btn-primary" onclick="add('${products[index].id}')">Add</button>
+        </div>
+      </div>
+        `
+    }
+})();
+
+
+
+</script>
+
+<style>
+    img {
+    float: left;
+    width:  200px;
+    height: 220px;
+    object-fit: cover;
+}
+</style>
+
+</body>
+</html>
