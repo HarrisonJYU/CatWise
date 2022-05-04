@@ -79,8 +79,8 @@ app.get("/wishlist", function(req, res) {
   res.render("pages/wishlist");
 });
 
-app.get("/test", function(req, res) {
-  res.render("pages/test");
+app.get("/applicationstatus", function(req, res) {
+  res.render("pages/applicationstatus");
 });
 
 app.get("/dashboard", authMiddleware, async function(req, res) {
@@ -89,6 +89,30 @@ app.get("/dashboard", authMiddleware, async function(req, res) {
     user: req.user,
     feed
   });
+});
+
+app.get("/detail1", function(req, res) {
+  res.render("pages/detail1");
+});
+
+app.get("/detail2", function(req, res) {
+  res.render("pages/detail2");
+});
+
+app.get("/detail3", function(req, res) {
+  res.render("pages/detail3");
+});
+
+app.get("/detail4", function(req, res) {
+  res.render("pages/detail4");
+});
+
+app.get("/detail5", function(req, res) {
+  res.render("pages/detail5");
+});
+
+app.get("/detail6", function(req, res) {
+  res.render("pages/detail6");
 });
 
 app.post("/sessionLogin", async (req, res) => {
