@@ -1,4 +1,4 @@
-# Milestone 3 Project: CatWise
+# CatWise
 
 ## About 
 **Project Description:** <br>
