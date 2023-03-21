@@ -4,8 +4,8 @@
 **Project Description:** <br>
 A web app that displays adoptable cats in NYC shelters and allows users to make adoption decisions based on their preference of the cat's personality.
 
-* Product Overview: <a href='https://docs.google.com/document/d/1u9-42_wN5z_heDCvzQTpA4aZNTGQhJ26E748gFJufLQ/edit'>Link</a>
-* CatWise Website: https://catwise-6bbf2.web.app
+<!-- * Product Overview: <a href='https://docs.google.com/document/d/1u9-42_wN5z_heDCvzQTpA4aZNTGQhJ26E748gFJufLQ/edit'>Link</a>
+* CatWise Website: https://catwise-6bbf2.web.app -->
 
 
 ## Usage
